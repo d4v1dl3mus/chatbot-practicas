@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Chatbot - Plan de Mejoramiento</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/geist-font/1.0.0/fonts/geist-sans/style.min.css" />
+    <style>
+        body {
+            font-family: 'Geist Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            margin-bottom: 32px;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .instruction-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 24px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .instruction-box p {
+            margin: 0;
+            color: #4a4a4a;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #854fff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <!-- <img src="https://nocodeveloper.com/wp-content/uploads/2024/09/cropped-Nocode-veloper-1-300x120.png"
+                alt="Logo nocodeveloper" class="logo" /> -->
+        </div>
+        <h1>Demo de Chatbot Institucional</h1>
+        <div class="instruction-box">
+            <p>
+                Esta es una <strong>demostración de chatbot</strong> desarrollada como parte de un <strong>plan de mejoramiento institucional</strong>
+                en el marco de mis <strong>prácticas profesionales</strong> como estudiante de <em>Ingeniería de Sistemas</em> de la
+                <strong>CUN - Corporación Unificada Nacional de Educación Superior</strong>.
+            </p>
+            <br />
+            <p>
+                El chatbot aún <strong>no está completamente entrenado</strong> debido a limitaciones de tiempo, pero se puede probar su
+                funcionamiento haciendo preguntas sobre la carrera <span class="highlight">"Licenciatura en Educación Básica"</span>.
+            </p>
+            <br />
+            <p>Haz clic en el botón en la <strong>parte inferior derecha</strong> para iniciar la conversación.</p>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://chatbot.noho.digital/webhook/facturacion-electronica-bot/chat'
+        });
+    </script>
+    <script src="https://nocodeveloper.com/chat.js"></script>
+</body>
+
+</html>
