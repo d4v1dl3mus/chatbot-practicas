@@ -122,6 +122,33 @@
             webhookUrl: 'https://chatbot.noho.digital/webhook/facturacion-electronica-bot/chat'
         });
     </script>
+    <script>
+  function traducirChatN8N() {
+    const reemplazos = [
+      { original: "Hi there! 👋", nuevo: "¡Hola! 👋" },
+      { original: "Start a chat. We're here to help you 24/7.", nuevo: "Inicia un chat. Estamos aquí para ayudarte 24/7." },
+      { original: "My name is Nathan. How can I assist you today?", nuevo: "Mi nombre es Jarvis. ¿En qué puedo ayudarte hoy?" },
+      { original: "Type your question..", nuevo: "Escribe tu pregunta..." },
+    ];
+
+    reemplazos.forEach(({ original, nuevo }) => {
+      const elementos = Array.from(document.querySelectorAll('*')).filter(e => e.innerText === original);
+      elementos.forEach(el => el.innerText = nuevo);
+    });
+
+    // Cambiar el placeholder del textarea
+    const textarea = document.querySelector('textarea[placeholder="Type your question.."]');
+    if (textarea) textarea.placeholder = "Escribe tu pregunta...";
+  }
+
+  // Ejecutar cada medio segundo hasta encontrar todos los textos (por si el widget tarda)
+  const intervalo = setInterval(() => {
+    traducirChatN8N();
+    const yaTraducido = document.body.innerText.includes("¡Hola!");
+    if (yaTraducido) clearInterval(intervalo);
+  }, 500);
+</script>
+
     <script src="https://nocodeveloper.com/chat.js"></script>
 </body>
 
